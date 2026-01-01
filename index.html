@@ -1,94 +1,104 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="fr-FR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的个人主页</title>
+    <title>Mon Coin Français | 法语学习频道</title>
+    <!-- 引入法式优雅字体 -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Outfit:wght@300;400;600&family=Inter:wght@400;500&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <!-- 引入 Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body class="light-mode">
-    <nav class="navbar">
+    <!-- 装饰性背景流光 -->
+    <div class="french-bg"></div>
+
+    <nav class="glass-nav">
         <div class="container">
-            <div class="logo">Portfolio</div>
-            <ul class="nav-links">
-                <li><a href="#home">首页</a></li>
-                <li><a href="#about">关于</a></li>
-                <li><a href="#projects">项目</a></li>
-                <li><a href="#contact">联系</a></li>
-            </ul>
-            <button id="theme-toggle" class="theme-btn">
-                <span class="sun-icon">☀️</span>
-                <span class="moon-icon">🌙</span>
-            </button>
+            <div class="logo">Ma<span>Vie</span>Française</div>
+            <div class="nav-right">
+                <ul class="nav-links">
+                    <li><a href="#conjugation">变位工具</a></li>
+                    <li><a href="#vocabulary">每日单词</a></li>
+                    <li><a href="#resources">资源库</a></li>
+                </ul>
+                <button id="theme-toggle" class="theme-btn">
+                    <span class="icon">✨</span>
+                </button>
+            </div>
         </div>
     </nav>
 
-    <header id="home" class="hero">
-        <div class="container">
+    <main class="container">
+        <!-- Hero Section -->
+        <header class="hero-fr">
             <div class="hero-content">
-                <h1>您好，我是 <span class="highlight">你的名字</span></h1>
-                <p class="tagline">一名热爱技术的创造者 / 设计师 / 开发者</p>
-                <div class="cta-btns">
-                    <a href="#contact" class="btn btn-primary">联系我</a>
-                    <a href="#projects" class="btn btn-secondary">查看作品</a>
-                </div>
+                <span class="fr-badge">Bienvenue !</span>
+                <h1>让法语学习<br>成为一种<span class="highlight-text">艺术</span></h1>
+                <p>记录我的法语进阶之路，分享有价值的学习资源。</p>
             </div>
-        </div>
-    </header>
+        </header>
 
-    <section id="about" class="section">
-        <div class="container">
-            <h2 class="section-title">关于我</h2>
-            <div class="about-grid">
-                <div class="about-text">
-                    <p>这里可以写一段简短的自我介绍。介绍你的背景、兴趣爱好或者你正在追求的目标。</p>
-                    <p>我喜欢探索新技术，并致力于通过代码创造有价值的东西。</p>
-                </div>
+        <!-- 动词变位核心板块 -->
+        <section id="conjugation" class="glass-card main-feature">
+            <div class="card-header">
+                <h2>Outil de Conjugaison <span>动词变位查询</span></h2>
             </div>
-        </div>
-    </section>
-
-    <section id="projects" class="section bg-alt">
-        <div class="container">
-            <h2 class="section-title">我的项目</h2>
-            <div class="projects-grid">
-                <!-- 项目卡片 1 -->
-                <div class="project-card">
-                    <div class="project-img"></div>
-                    <div class="project-info">
-                        <h3>项目名称一</h3>
-                        <p>简单描述一下这个项目的功能和使用的技术栈。</p>
-                        <a href="#" class="project-link">查看详情 →</a>
+            <div class="conjugation-container">
+                <div class="search-area">
+                    <input type="text" id="verb-search" placeholder="输入动词，例如：être, avoir, manger..." autocomplete="off">
+                    <div id="suggestions" class="suggestions"></div>
+                </div>
+                <div id="conjugation-result" class="result-area">
+                    <div class="verb-title">
+                        <h3 id="current-verb">être</h3>
+                        <span id="verb-meaning">是 / 存在</span>
                     </div>
-                </div>
-                <!-- 项目卡片 2 -->
-                <div class="project-card">
-                    <div class="project-img"></div>
-                    <div class="project-info">
-                        <h3>项目名称二</h3>
-                        <p>简单描述一下这个项目的功能和使用的技术栈。</p>
-                        <a href="#" class="project-link">查看详情 →</a>
+                    <div class="conjugation-grid">
+                        <div class="conj-item"><span>Je</span> <strong id="c-je">suis</strong></div>
+                        <div class="conj-item"><span>Tu</span> <strong id="c-tu">es</strong></div>
+                        <div class="conj-item"><span>Il / Elle</span> <strong id="c-il">est</strong></div>
+                        <div class="conj-item"><span>Nous</span> <strong id="c-nous">sommes</strong></div>
+                        <div class="conj-item"><span>Vous</span> <strong id="c-vous">êtes</strong></div>
+                        <div class="conj-item"><span>Ils / Elles</span> <strong id="c-ils">sont</strong></div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <footer id="contact" class="footer">
-        <div class="container">
-            <h2 class="section-title">保持联系</h2>
-            <p>如果您有任何合作意向或仅仅想打个招呼，欢迎随时联系我！</p>
-            <div class="social-links">
-                <a href="#">Email</a>
-                <a href="#">GitHub</a>
-                <a href="#">WeChat</a>
+        <!-- 其他功能块 (Bento Grid Style) -->
+        <div class="bento-layout">
+            <!-- 每日单词 -->
+            <div id="vocabulary" class="glass-card bento-small">
+                <h3>Le Mot du Jour</h3>
+                <div class="word-card">
+                    <span class="word">Épanouissement</span>
+                    <span class="meaning">n.m. 绽放、自我实现</span>
+                    <p class="example">"L'épanouissement personnel est essentiel."</p>
+                </div>
             </div>
-            <p class="copyright">&copy; 2024 你的名字. All rights reserved.</p>
+
+            <!-- 资源库 -->
+            <div id="resources" class="glass-card bento-wide">
+                <h3>Ma Bibliothèque</h3>
+                <div class="resource-grid">
+                    <div class="res-item">🎬 影视推荐</div>
+                    <div class="res-item">🎙️ 听力播客</div>
+                    <div class="res-item">📚 阅读精华</div>
+                    <div class="res-item">⚙️ 常用工具</div>
+                </div>
+            </div>
         </div>
+    </main>
+
+    <footer class="fr-footer">
+        <p>Bonne chance dans votre apprentissage ! 🍀</p>
     </footer>
 
     <script src="script.js"></script>
 </body>
+
 </html>
